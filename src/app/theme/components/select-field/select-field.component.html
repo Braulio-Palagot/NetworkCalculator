@@ -1,0 +1,76 @@
+<div class="select-container">
+
+  <div class="input-container"
+       [ngClass]="{
+          'input-container--error': hasError,
+          'input-container--success': isSuccess && showSuccess,
+          'input-container--disabled': disabled,
+          'input-container--filled': filled,
+          'input-container--outlined': outlined,
+          'input-container--focused': isFocused
+       }"
+       (focusin)="onFocus($event)"
+       (focusout)="onBlur($event)">
+
+  <span *ngIf="leadingIcon != ''"
+        class="material-icons leading-icon"
+        [ngClass]="{
+           'leading-icon--disabled': disabled,
+        }">{{ leadingIcon }}</span>
+
+    <label [for]="fieldName"
+           class="input-label"
+           [ngClass]="{
+              'input-label--error': hasError,
+              'input-label--success': isSuccess && showSuccess,
+              'input-label--disabled': disabled,
+              'input-label--focused': isFocused,
+              'input-label--floating': isFocused || (value !== ''),
+              'input-label--required': required,
+              'input-label--leading-icon': leadingIcon != ''
+           }">
+      {{ label }}
+    </label>
+
+    <input [id]="fieldName"
+           tabindex="1"
+           [name]="fieldName"
+           class="input"
+           [ngClass]="{
+             'input--leading-icon': leadingIcon != ''
+           }"
+           [required]="required"
+           [placeholder]="(isFocused && value === '') ? placeholder : ''"
+           [(ngModel)]="value"
+           [disabled]="disabled || readonly"
+           (ngModelChange)="onChange($event)"/>
+
+    <span #dropDownToggle
+          tabindex="0"
+          class="material-icons trailing-icon"
+          [ngClass]="{
+             'trailing-icon--disabled': disabled,
+          }">arrow_drop_down</span>
+  </div>
+
+  <div #selectList
+       class="select-list"
+       [ngClass]="{
+          'select-list--show': showSelect
+       }"
+       [style.height.rem]="showSelect ? options.length * 2.35 : 0"
+       [style.box-shadow]="showSelect ? '0 0 1px 2px rgba(0, 0, 0, 0.1)' : 'none'"
+       (focusin)="onFocus($event)"
+       (focusout)="onBlur($event)">
+    <span *ngFor="let option of options"
+          class="select-option"
+          [ngClass]="{
+            'select-option--selected': option.label === value
+          }"
+          (click)="selectOption(option)">{{ option.label }}</span>
+  </div>
+
+  <div class="input-error">
+    <span *ngIf="hasError">{{ errorMessage }}</span>
+  </div>
+</div>

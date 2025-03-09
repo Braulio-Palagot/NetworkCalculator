@@ -1,0 +1,38 @@
+<div class="networks-container">
+
+  <input-button outlined
+                leadingIcon="add"
+                (onClick)="addNetwork()"/>
+
+  <div class="net-container" *ngFor="let net of networks; let i = index">
+    <div class="net">
+      <input-field outlined
+                   leadingIcon="lan"
+                   label="Nombre de red"
+                   fieldName="name"
+                   (valueChange)="handleChange($event, net, 'name')"
+                   required/>
+
+      <input-field outlined
+                   leadingIcon="tag"
+                   label="Total de dispositivos"
+                   fieldName="size"
+                   type="number"
+                   (valueChange)="handleChange($event, net, 'size')"
+                   required/>
+
+      <select-field outlined
+                    [options]="types"
+                    leadingIcon="router"
+                    label="Tipo de red"
+                    fieldName="wan"
+                    (selection)="handleChange($event.value, net, 'wan')"
+                    required/>
+    </div>
+
+    <input-button *ngIf="i > 0"
+                  text
+                  leadingIcon="cancel"
+                  (onClick)="removeNetwork(net)"/>
+  </div>
+</div>

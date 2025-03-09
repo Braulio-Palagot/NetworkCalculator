@@ -1,0 +1,85 @@
+$primary: #485D92FF;
+$on-primary: #FFFFFF;
+
+$primary-container: #DAE2FFFF;
+$on-primary-container: #001946FF;
+
+$secondary: #585E71FF;
+$on-secondary: #FFFFFFFF;
+
+$secondary-container: #DCE2F9FF;
+$on-secondary-container: #151B2CFF;
+
+$tertiary: #735572FF;
+$on-tertiary: #FFFFFFFF;
+
+$tertiary-container: #FED7FAFF;
+$on-tertiary-container: #2A122CFF;
+
+$error: #BA1A1AFF;
+$on-error: #FFFFFFFF;
+
+$error-container: #FFDAD6FF;
+$on-error-container: #410002FF;
+
+$success: #2E7D32FF;
+$on-success: #FFFFFFFF;
+
+$success-container: #D0E9D6FF;
+$on-success-container: #1B5E20FF;
+
+$warning: #FFA000FF;
+$on-warning: #FFFFFFFF;
+
+$warning-container: #FFF3C4FF;
+$on-warning-container: #5F4E00FF;
+
+$background: #FAF8FFFF;
+$on-background: #1A1B21FF;
+
+$surface: #FAF8FFFF;
+$on-surface: #1A1B21FF;
+$surface-variant: #E1E2ECFF;
+$on-surface-variant: #44464FFF;
+
+$outline: #757780FF;
+$outline-variant: #C5C6D0FF;
+
+$shadow: #AFAFAF;
+
+
+$light : (
+  primary: $primary,
+  on-primary: $on-primary,
+  primary-container: $primary-container,
+  on-primary-container: $on-primary-container,
+  secondary: $secondary,
+  on-secondary: $on-secondary,
+  secondary-container: $secondary-container,
+  on-secondary-container: $on-secondary-container,
+  tertiary: $tertiary,
+  on-tertiary: $on-tertiary,
+  tertiary-container: $tertiary-container,
+  on-tertiary-container: $on-tertiary-container,
+  error: $error,
+  on-error: $on-error,
+  error-container: $error-container,
+  on-error-container: $on-error-container,
+  success: $success,
+  on-success: $on-success,
+  success-container: $success-container,
+  on-success-container: $on-success-container,
+  warning: $warning,
+  on-warning: $on-warning,
+  warning-container: $warning-container,
+  on-warning-container: $on-warning-container,
+  background: $background,
+  on-background: $on-background,
+  surface: $surface,
+  on-surface: $on-surface,
+  surface-variant: $surface-variant,
+  on-surface-variant: $on-surface-variant,
+  outline: $outline,
+  outline-variant: $outline-variant,
+  shadow: $shadow
+)

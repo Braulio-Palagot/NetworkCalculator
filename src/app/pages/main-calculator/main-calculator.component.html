@@ -1,0 +1,40 @@
+<div class="main-container">
+
+  <div id="header" class="header">
+    <span *ngIf="showResult"
+          class="material-icons"
+          (click)="showResult = false">arrow_back</span>
+
+    <h2>Calculadora VLSM</h2>
+  </div>
+
+  <div id="body" class="body">
+    <app-networks-form id="form"
+                       *ngIf="mobile"
+                       [hidden]="showResult"
+                       (nets)="updateNetworks($event)"/>
+    <app-networks-form id="form"
+                       *ngIf="!mobile"
+                       (nets)="updateNetworks($event)"/>
+
+    <app-networks-result id="result"
+                         *ngIf="showResult || !mobile"
+                         [showResult]="showResult"
+                         [networks]="networks"/>
+
+    <input-button *ngIf="mobile"
+                  class="floating-button"
+                  label="Calcular"
+                  [disabled]="showResult"
+                  (onClick)="showResult = true"/>
+    <input-button *ngIf="!mobile"
+                  class="floating-button"
+                  label="Calcular"
+                  (onClick)="showResult = true"/>
+  </div>
+
+  <div id="footer" class="footer">
+    <p>Desarrollado por <a href="https://www.linkedin.com/in/braulio-david-hernández-palagot">Braulio David Hernández
+      Palagot</a></p>
+  </div>
+</div>

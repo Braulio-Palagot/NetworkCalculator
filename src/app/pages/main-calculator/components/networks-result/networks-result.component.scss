@@ -1,0 +1,28 @@
+@import "../../../../theme/styles";
+
+@include themify() {
+
+  .result-container {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: space-between;
+    gap: 0.4rem;
+
+    height: 100vh;
+    padding: 2rem 1rem 2rem 1rem;
+
+    background-color: themed(surface);
+    color: themed(on-surface);
+
+    .calculus {
+      width: 100%;
+      overflow: scroll;
+
+      .network {
+        border-bottom: 1px solid themed(on-surface);
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

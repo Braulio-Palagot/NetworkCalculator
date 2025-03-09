@@ -1,0 +1,98 @@
+@import "../../styles";
+
+@include themify() {
+  .button-container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 2.25rem;
+    min-width: 4rem;
+    max-width: 15rem;
+
+    padding: 0 0.5rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+
+    box-shadow: 1px 1px 2px 1px themed(shadow);
+    text-transform: capitalize;
+    user-select: none;
+
+    &.button--primary {
+      &.button--filled {
+        background-color: themed(primary);
+        color: themed(on-primary);
+        border: 2px solid themed(primary);
+      }
+
+      &.button--outlined {
+        background-color: themed(background);
+        color: themed(primary);
+        border: 2px solid themed(primary);
+      }
+
+      &.button--text {
+        background-color: themed(background);
+        color: themed(primary);
+        border: none;
+      }
+    }
+
+    &.button--secondary {
+      &.button--filled {
+        background-color: themed(secondary);
+        color: themed(secondary-text);
+        border: 2px solid themed(secondary);
+      }
+
+      &.button--outlined {
+        background-color: themed(background);
+        color: themed(secondary);
+        border: 2px solid themed(secondary);
+      }
+
+      &.button--text {
+        background-color: themed(background);
+        color: themed(secondary);
+        border: none;
+      }
+    }
+
+    &.button--disabled {
+      filter: brightness(0.8);
+      box-shadow: none;
+      cursor: default;
+
+      &:hover {
+        filter: brightness(0.8);
+      }
+
+      &:active {
+        filter: brightness(0.8);
+      }
+    }
+
+    .leading-icon {
+      margin-right: 0.5rem;
+    }
+
+    .trailing-icon {
+      margin-left: 0.5rem;
+    }
+
+    &:hover{
+      filter: brightness(1.1);
+    }
+
+    &:active{
+      filter: brightness(0.9);
+      box-shadow: none;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+<button class="button-container"
+        (click)="emitClick($event)"
+        [disabled]="disabled"
+        [ngClass]="{
+           'button--filled': filled,
+           'button--outlined': outlined,
+           'button--text': text,
+           'button--disabled': disabled,
+           'button--primary': primary,
+           'button--secondary': secondary
+        }">
+
+  <span *ngIf="leadingIcon != ''"
+        class="material-icons leading-icon">{{ leadingIcon }}</span>
+
+  {{ label }}
+
+  <span *ngIf="trailingIcon != ''"
+        class="material-icons trailing-icon">{{ trailingIcon }}</span>
+</button>

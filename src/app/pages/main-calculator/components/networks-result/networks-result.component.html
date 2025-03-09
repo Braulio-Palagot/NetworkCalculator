@@ -1,0 +1,22 @@
+<div class="result-container">
+  <div class="calculus">
+    <h2>Resultado del C&aacute;lculo</h2>
+
+    <div class="networks">
+      <p>Clase de la Infraestructura: {{ netClass }} {{ totalDevices > 0 ? '=> ' + totalDevices + ' dirs.' : '' }}</p>
+
+      <div *ngFor="let network of networks"
+           class="network">
+
+        <h3> {{ network.name }} </h3>
+
+        <p>Direcci&oacute;n de red: {{ network.netAddress }} / {{ network.mask }}</p>
+        <p>Valor de M&aacute;scara: {{ network.stringMask }}</p>
+        <p>Primera Asignable: {{ network.netFirst }}</p>
+        <p>&Uacute;ltima Asignable: {{ network.netLast }}</p>
+        <p *ngIf="!network.wan">Gateway: {{ network.netGateway }}</p>
+        <p>Broadcast: {{ network.netBroadcast }}</p>
+      </div>
+    </div>
+  </div>
+</div>

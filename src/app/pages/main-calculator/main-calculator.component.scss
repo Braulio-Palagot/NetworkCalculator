@@ -1,0 +1,104 @@
+@import "../../theme/styles";
+
+@include themify() {
+  .main-container {
+    position: relative;
+    display: grid;
+    grid-template-rows: 8vh 84vh 8vh;
+    grid-template-areas: "header"
+                         "body"
+                         "footer";
+
+    height: 100vh;
+    overflow: hidden;
+
+    background-color: themed(surface);
+    color: themed(on-surface);
+
+    .header {
+      grid-area: header;
+      z-index: 2;
+
+      display: flex;
+      flex-direction: row;
+      justify-content: start;
+      align-items: center;
+
+      gap: 1rem;
+      padding: 0 1rem;
+
+      background-color: themed(primary);
+      color: themed(on-primary);
+
+      span {
+        padding: 0.5rem;
+        cursor: pointer;
+      }
+    }
+
+    .body {
+      grid-area: body;
+      z-index: 1;
+
+      padding: 0 1rem;
+      overflow: scroll;
+
+      #form {
+        grid-area: form;
+        z-index: 1;
+
+        height: 100%;
+      }
+
+      #result {
+        grid-area: result;
+        z-index: 1;
+
+        height: 100%;
+      }
+    }
+
+    .floating-button {
+      z-index: 3;
+
+      position: absolute;
+      bottom: 6rem;
+      right: 2rem;
+    }
+
+    .footer {
+      grid-area: footer;
+      z-index: 2;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background-color: themed(secondary);
+      color: themed(on-secondary);
+
+      a {
+        text-decoration: none;
+        color: themed(tertiary-container);
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .header {
+      span {
+        display: none;
+      }
+    }
+
+    .body {
+      display: grid;
+      grid-template-columns: 7fr 5fr;
+      grid-template-areas: "form result";
+    }
+
+    .floating-button {
+      bottom: 8rem;
+    }
+  }
+}
