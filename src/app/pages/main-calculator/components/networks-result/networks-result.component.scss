@@ -10,6 +10,7 @@
     gap: 0.4rem;
 
     max-height: 84vh;
+    margin-bottom: 5rem;
     overflow-y: scroll;
     padding: 2rem 1rem 2rem 1rem;
 
@@ -19,6 +20,10 @@
     .calculus {
       width: 100%;
       overflow: scroll;
+
+      &:last-child {
+        margin-bottom: 2rem;
+      }
 
       .network {
         border-bottom: 1px solid themed(on-surface);

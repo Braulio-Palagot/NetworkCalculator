@@ -26,6 +26,10 @@
       margin: 0.4rem 0;
       border-bottom: 1px solid themed(shadow);
 
+      &:last-child {
+        margin-bottom: 6rem;
+      }
+
       .net {
         display: flex;
         flex-direction: column;
