@@ -9,7 +9,8 @@
     justify-content: space-between;
     gap: 0.4rem;
 
-    height: 100vh;
+    max-height: 84vh;
+    overflow-y: scroll;
     padding: 2rem 1rem 2rem 1rem;
 
     background-color: themed(surface);
