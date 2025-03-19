@@ -109,8 +109,8 @@ export class NetworksResultComponent implements OnInit {
       network.netLast = this.substractOctetAddresses(network.netGateway.split('.').map(Number), 1).join('.');
       network.netBroadcast = this.addOctetAddresses(network.netGateway.split('.').map(Number), 1).join('.');
     } else {
-      network.netLast = this.addOctetAddresses(network.netAddress.split('.').map(Number), network.addressesProjection - 2).join('.');
-      network.netBroadcast = this.addOctetAddresses(network.netLast.split('.').map(Number), network.addressesProjection - 1).join('.');
+      network.netLast = this.addOctetAddresses(network.netFirst.split('.').map(Number), 1).join('.');
+      network.netBroadcast = this.addOctetAddresses(network.netLast.split('.').map(Number), 1).join('.');
     }
   }
 
